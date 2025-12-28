@@ -8,7 +8,8 @@ echo "Using Python: $PYTHON_BIN"
 
 echo "Building frontend..."
 cd frontend
-npm install
+
+npm ci
 npm run build
 
 echo "Installing backend dependencies..."
