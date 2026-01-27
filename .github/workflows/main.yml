@@ -1,0 +1,14 @@
+  name: first workflow
+  on:
+    push:
+      branches:
+        - main
+    fork:
+  jobs:
+    job1:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "hello world from ${{ github.actor }}
+    
+       
+  
