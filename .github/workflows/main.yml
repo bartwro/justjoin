@@ -11,5 +11,3 @@
       steps:
         - run: echo "hello world from env ${{ vars.name }}"
     
-       
-  
