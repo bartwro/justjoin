@@ -6,6 +6,7 @@
     fork:
   jobs:
     job1:
+      environment: Dev 
       runs-on: ubuntu-latest
       steps:
         - run: echo "hello world from env ${{ vars.name }}"
