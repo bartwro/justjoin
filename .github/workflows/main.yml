@@ -8,7 +8,7 @@
     job1:
       runs-on: ubuntu-latest
       steps:
-        - run: echo "hello world from ${{ github.actor }}"
+        - run: echo "hello world from env ${{ vars.name }}"
     
        
   
