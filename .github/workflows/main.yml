@@ -10,4 +10,6 @@
       runs-on: ubuntu-latest
       steps:
         - run: echo "hello world from env ${{ vars.name }}"
-    
+        - name: checkout
+          uses: actions/checkout@v6.0.2
+        - run: tree
