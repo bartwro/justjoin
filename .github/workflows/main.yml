@@ -16,3 +16,8 @@
 
         - name: idk
           run: git status
+    prod:
+      environment: Prod
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "Prod"
