@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ls -l
+        run: ls -l
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Show file contents
+        run: |
+          echo "=== frontend/bartosz.txt ==="
+          head -n 200 frontend/bartosz.txt || cat frontend/bartosz.txt
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: |
+          npm ci --silent || npm install --silent
+
+      - name: Build frontend (if present)
+        working-directory: frontend
+        run: |
+          npm run build --if-present
+
+      - name: Simple smoke test
+        run: echo "CI workflow finished"
+  test:
+    needs: ci1
+    runs-on: ubuntu-latest
+    environment:
+      Dev
+    steps:
+      - name: bartek-test-pwd
+        run: ls -l
+
+      - name: bartek-step1
+        run: echo ${{ vars.NAME }}
+
+          
+

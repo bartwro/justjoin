@@ -8,6 +8,7 @@ echo "Using Python: $PYTHON_BIN"
 
 echo "Building frontend..."
 cd frontend
+export NODE_ENV=development
 
 npm ci
 npm run build
