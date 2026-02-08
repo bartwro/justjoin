@@ -13,3 +13,6 @@
         - name: checkout
           uses: actions/checkout@v6.0.2
         - run: tree
+
+        - name: idk
+          run: git status
