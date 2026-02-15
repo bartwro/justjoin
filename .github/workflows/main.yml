@@ -21,3 +21,11 @@
       runs-on: ubuntu-latest
       steps:
         - run: echo "Prod"
+    
+    job-ts-test:
+      environment: Dev
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout
+          uses: actions/checkout@v6.0.2
+        - uses: ./.github/actions/action-ts-1
